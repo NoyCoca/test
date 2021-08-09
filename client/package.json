@@ -35,11 +35,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080/",
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  }
+  "proxy": "http://localhost:8080/"
 }
