@@ -4,11 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "setup": "npm install && cd client && npm install ",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
+    "setup": "npm install && cd client && npm install",
+    "start": "node server/server.js",
     "server": "nodemon server/server.js",
-    "client": "npm start --prefix client",
+    "client": "cd client && npm run start",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
@@ -23,7 +22,8 @@
     "nodemon": "^2.0.12"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "concurrently": "^6.2.1"
   },
   "engines": {
     "node": "14.x"
