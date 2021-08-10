@@ -1,19 +1,20 @@
 const env = require('dotenv');
 env.config();
+const PORT = process.env.PORT || 8080
 const connection = require('./DB')
 const express = require('express');
 const app = express();
 const studentRouter = require('./router/studentRouter')
 const cors = require('cors');
 const path = require('path');
-const PORT = process.env.PORT || 8080
 
 app.use(express.json())
+app.use(express.urlencoded());
+app.use(cors())
 
 connection.on('error', () => {
     console.log("error")
 })
-app.use(cors())
 app.listen(PORT, () => {
     console.log("confected to server ")
 })
